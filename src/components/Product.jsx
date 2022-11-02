@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import jordan1 from "../assets/jordan1.webp";
 import jordan2 from "../assets/jordan2.webp";
 import jordan3 from "../assets/jordan3.webp";
 import jordan3Pair from "../assets/jordan3-pair.webp";
 import jordan3Sole from "../assets/jordan3-sole.webp";
+const image = [
+    jordan3,
+    jordan3Pair,
+    jordan3Sole
+]
 
 export const Product = () => {
+    const [img, setImg] = useState(image[0]);
+
     return (
         <div className='px-12 w-full'>
             <div className='py-20 grid grid-cols-2 gap-4 m-auto container'>
                 <div className='bg-yellow-400'>
-                    <img src={jordan3} alt="" className='w-full' />
+                    <img src={img} alt="" className='w-full' />
                     <div className='px-4 py-2 w-full grid grid-cols-3 gap-4'>
-                        <img src={jordan3} alt="" className='border' />
+                        {
+                            image.map((item, i) => (
+                                <div key={i}>
+                                    <img
+                                        src={item}
+                                        onClick={() => setImg(image[i])}
+                                        alt=""
+                                        className='bg-yellow-300 transition duration-200 cursor-pointer'
+                                    />
+                                </div>
+                            )
+
+                            )
+                        }
+                        {/* <img src={jordan3} alt="" className='border' />
                         <img src={jordan3Pair} alt="" className='border opacity-75 transition duration-200 hover:opacity-100 cursor-pointer' />
-                        <img src={jordan3Sole} alt="" className='border opacity-75 transition duration-200 hover:opacity-100 cursor-pointer' />
+                        <img src={jordan3Sole} alt="" className='border opacity-75 transition duration-200 hover:opacity-100 cursor-pointer' /> */}
                     </div>
                 </div>
                 <div>
