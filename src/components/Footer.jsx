@@ -2,8 +2,8 @@ import React from 'react'
 
 export const Footer = () => {
     return (
-        <div className='px-12 py-20'>
-            <footer className=' container m-auto grid grid-cols-3 gap-4 max-w-6xl'>
+        <div className='px-8 md:px-12 py-20'>
+            <footer className=' container m-auto grid md:grid-cols-3 gap-4 max-w-6xl'>
                 <div>
                     <h2 className='py-4 text-xl font-semibold'>ABOUT THE COMPANY</h2>
                     <li className='py-2 font-medium list-none'><a href="">About Us</a></li>

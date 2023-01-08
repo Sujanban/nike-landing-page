@@ -94,41 +94,33 @@ export const Shop = () => {
 
 
     return (
-        <div className='px-12 py-20 bg-[#FEEAC2]'>
+        <div className='px-8 md:px-12 py-20 bg-[#FEEAC2]'>
             <div className='container m-auto '>
                 <h1 className='px-6 py-4 text-3xl font-semibold text-center'>NEW COLLECTION</h1>
-                <div className='py-4 px-12 flex items-center justify-between'>
+                <div className='py-4 md:px-12 flex-wrap flex items-center justify-center md:justify-between'>
                     <div className='flex items-center justify-center'>
-                        <h2 className='px-6 py-4 text-2xl font-medium'>Colors</h2>
-                        {/* <span className='m-2 p-1 cursor-pointer rounded bg-green-800 text-white text-sm' onClick={() => setData(shoeData)}>Reset</span> */}
+                        <h2 className='md:px-6 py-4 text-2xl font-medium'>Colors</h2>
                         <span className='relative m-2 h-6 cursor-pointer w-6 rounded-full bg-white' onClick={() => setData(shoeData)}>
                             <i className='font-normal text-2xl text-red-600 absolute -top-1 left-[10%]'>X</i>
                         </span>
-
                         <span className='m-2 h-6 cursor-pointer w-6 rounded-full bg-stone-800' onClick={() => filterData('black')}></span>
                         <span className='m-2 h-6 cursor-pointer w-6 rounded-full bg-gray-300' onClick={() => filterData('white')}></span>
                         <span className='m-2 h-6 cursor-pointer w-6 rounded-full bg-red-500' onClick={() => filterData('red')}></span>
-                        {/* <span className='m-2 h-6 w-6 rounded-full bg-yellow-500'></span>
-                        <span className='m-2 h-6 w-6 rounded-full bg-red-500'></span>
-                        <span className='m-2 h-6 w-6 rounded-full bg-pink-500'></span>
-                        <span className='m-2 h-6 w-6 rounded-full bg-cyan-500'></span>
-                        <span className='m-2 h-6 w-6 rounded-full bg-blue-500'></span> */}
                     </div>
                     <form action="" className='flex items-center justify-center'>
-                        <input 
-                        type="text" 
-                        placeholder='Start Typing...' 
-                        className='p-2 outline-none roundded-l-md rounded' 
-                        onChange={(e)=> setQuery(e.target.value)}
+                        <input
+                            type="text"
+                            placeholder='Start Typing...'
+                            className='p-2 outline-none roundded-l-md rounded'
+                            onChange={(e) => setQuery(e.target.value)}
                         />
-                        {/* <button className='p-2 px-4 bg-stone-900 rounded-r-md text-white'><FiSearch size={25} /></button> */}
                     </form>
                 </div>
-                <div className='grid grid-cols-3 gap-4 '>
+                <div className='grid xs:grid-cols-2 lg:grid-cols-3 lg:gap-4 '>
                     {
-                        data.filter(data=> data.name.toLowerCase().includes(query)).map((item, index) => (
+                        data.filter(data => data.name.toLowerCase().includes(query)).map((item) => (
                             <>
-                                <div className='m-16' key={index}>
+                                <div className='m-4 xl:m-16' key={data.id}>
                                     <img src={item.image} alt="" />
                                     <div className='flex items-center justify-between'>
                                         <div>
